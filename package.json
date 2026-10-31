@@ -1,0 +1,25 @@
+{
+  "name": "loglive",
+  "version": "1.0.0",
+  "description": "High-throughput distributed log ingestion, storage, and search system",
+  "main": "api.js",
+  "scripts": {
+    "start": "node api.js",
+    "worker": "node worker.js",
+    "seed": "node seed.js",
+    "mock": "node mock-logs.js",
+    "loadtest": "node loadtest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.19.2",
+    "autocannon": "^8.0.0",
+    "cors": "^2.8.6",
+    "express": "^5.3.0",
+    "mongoose": "^9.11.1",
+    "redis": "^6.3.0"
+  }
+}

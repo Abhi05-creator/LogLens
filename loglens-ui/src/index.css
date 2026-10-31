@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  --bg: #edf0f4;
+  --panel: #ffffff;
+  --ink: #1b2433;
+  --muted: #5c6678;
+  --line: #d5dae3;
+  --accent: #2b4acb;
+  --ERROR: #c2362f;
+  --WARN: #a8620a;
+  --INFO: #2a6b5b;
+  --DEBUG: #6b7385;
+  font-family: 'Schibsted Grotesk', system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+input {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.app {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px 16px 64px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.key {
+  width: 200px;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.search {
+  flex: 1 1 260px;
+}
+
+.svc {
+  width: 140px;
+}
+
+.seg {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.seg button {
+  border: 0;
+  background: transparent;
+  padding: 10px 12px;
+  border-right: 1px solid var(--line);
+}
+
+.seg button:last-child {
+  border-right: 0;
+}
+
+.seg button.on {
+  background: var(--ink);
+  color: #fff;
+}
+
+.live {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  padding: 10px 14px;
+}
+
+.live.on {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.strip {
+  display: flex;
+  height: 34px;
+  border-radius: 6px;
+  overflow: hidden;
+  gap: 2px;
+}
+
+.strip button {
+  flex-basis: 0;
+  min-width: 64px;
+  border: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.fill-ERROR {
+  background: var(--ERROR);
+}
+
+.fill-WARN {
+  background: var(--WARN);
+}
+
+.fill-INFO {
+  background: var(--INFO);
+}
+
+.fill-DEBUG {
+  background: var(--DEBUG);
+}
+
+.total {
+  margin: 8px 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.note {
+  padding: 16px;
+  background: var(--panel);
+  border: 1px dashed var(--line);
+  border-radius: 6px;
+  color: var(--muted);
+}
+
+.note.err {
+  border: 1px solid var(--ERROR);
+  color: var(--ERROR);
+}
+
+.logs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.logs li {
+  border-bottom: 1px solid var(--line);
+  border-left: 4px solid var(--DEBUG);
+}
+
+.logs li:last-child {
+  border-bottom: 0;
+}
+
+.lv-ERROR {
+  border-left-color: var(--ERROR) !important;
+}
+
+.lv-WARN {
+  border-left-color: var(--WARN) !important;
+}
+
+.lv-INFO {
+  border-left-color: var(--INFO) !important;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 72px 56px 120px 1fr;
+  gap: 12px;
+  align-items: baseline;
+  width: 100%;
+  padding: 10px 12px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+}
+
+.row:hover {
+  background: #f5f7fa;
+}
+
+.row time {
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+}
+
+.row b {
+  font-size: 13px;
+}
+
+.lv-ERROR b {
+  color: var(--ERROR);
+}
+
+.lv-WARN b {
+  color: var(--WARN);
+}
+
+.lv-INFO b {
+  color: var(--INFO);
+}
+
+.name {
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.msg {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+pre {
+  margin: 0;
+  padding: 12px 16px;
+  background: #f5f7fa;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  overflow-x: auto;
+}
+
+@media (max-width: 640px) {
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .key,
+  .svc {
+    width: 100%;
+  }
+
+  .row {
+    grid-template-columns: 72px 56px 1fr;
+  }
+
+  .msg {
+    grid-column: 1 / -1;
+  }
+}
